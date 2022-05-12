@@ -15,7 +15,7 @@ public class App {
     }
 
     private static double calcTax(double sallary) {
-        return sallary <= 1000 ? 0 : (sallary - 1000) * 0.17;
+        return sallary <= 1000 ? 0 : (sallary - 1000) * 17 / 100;
     }
 
 }
