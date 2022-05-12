@@ -14,8 +14,8 @@ public class App {
         return x > y ? x : y;
     }
 
-    private static int calcTax(double sallary) {
-        return sallary <= 1000 ? 0 : 17;
+    private static double calcTax(double sallary) {
+        return sallary <= 1000 ? 0 : (sallary - 1000) * 0.17;
     }
 
 }
