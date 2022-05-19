@@ -10,7 +10,7 @@ public class NumberManipulationAppl {
         System.out.println("Count digits = " + res);// 3
         res = countDigits2(8);
         System.out.println("Count digits = " + res);// 1
-        res = countDigits2(0);
+        res = countDigits26(0);
         System.out.println("Count digits = " + res);// 1
         luckyNumber(173854);// 1 + 3 + 5 != 7 + 8 + 4 - unlucky
         luckyNumber(1738649);// 1 + 3 + 6 + 9 == 7 + 8 + 4 - lucky
