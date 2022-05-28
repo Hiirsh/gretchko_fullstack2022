@@ -77,49 +77,6 @@ public class Book {
         this.title = title;
     }
 
-    public Book(long isbn, String author, String title, int yearOfPublishing) {
-        if (("" + isbn).length() == 13) {
-            this.isbn = "" + isbn;
-        }
-        if (("" + isbn).length() == 10) {
-            this.isbn = "978" + isbn;
-        }
-        this.author = author;
-        this.title = title;
-        if (yearOfPublishing > 1000) {
-            this.yearOfPublishing = yearOfPublishing;
-        }
-        if (yearOfPublishing >= 0 && yearOfPublishing <= 22) {
-            this.yearOfPublishing = 2000 + yearOfPublishing;
-        }
-        if (yearOfPublishing > 22 && yearOfPublishing <= 99) {
-            this.yearOfPublishing = 1900 + yearOfPublishing;
-        }
-    }
-
-    public Book(long isbn, String author, String title) {
-        if (("" + isbn).length() == 13) {
-            this.isbn = "" + isbn;
-        }
-        if (("" + isbn).length() == 10) {
-            this.isbn = "978" + isbn;
-        }
-        this.author = author;
-        this.title = title;
-
-    }
-
-    public Book(long isbn, String firstName, String lastName, String title) {
-        if (("" + isbn).length() == 13) {
-            this.isbn = "" + isbn;
-        }
-        if (("" + isbn).length() == 10) {
-            this.isbn = "978" + isbn;
-        }
-        this.author = firstName + " " + lastName;
-        this.title = title;
-    }
-
     public String getIsbn() {
         return isbn;
     }
@@ -129,15 +86,6 @@ public class Book {
             this.isbn = "" + isbn;
         }
         if (isbn.length() == 10) {
-            this.isbn = "978" + isbn;
-        }
-    }
-
-    public void setIsbn(long isbn) {
-        if (("" + isbn).length() == 13) {
-            this.isbn = "" + isbn;
-        }
-        if (("" + isbn).length() == 10) {
             this.isbn = "978" + isbn;
         }
     }
@@ -175,3 +123,59 @@ public class Book {
     }
 
 }
+
+/*
+ * public Book(long isbn, String author, String title, int yearOfPublishing) {
+ * if (("" + isbn).length() == 13) {
+ * this.isbn = "" + isbn;
+ * }
+ * if (("" + isbn).length() == 10) {
+ * this.isbn = "978" + isbn;
+ * }
+ * this.author = author;
+ * this.title = title;
+ * if (yearOfPublishing > 1000) {
+ * this.yearOfPublishing = yearOfPublishing;
+ * }
+ * if (yearOfPublishing >= 0 && yearOfPublishing <= 22) {
+ * this.yearOfPublishing = 2000 + yearOfPublishing;
+ * }
+ * if (yearOfPublishing > 22 && yearOfPublishing <= 99) {
+ * this.yearOfPublishing = 1900 + yearOfPublishing;
+ * }
+ * }
+ * 
+ * public Book(long isbn, String author, String title) {
+ * if (("" + isbn).length() == 13) {
+ * this.isbn = "" + isbn;
+ * }
+ * if (("" + isbn).length() == 10) {
+ * this.isbn = "978" + isbn;
+ * }
+ * this.author = author;
+ * this.title = title;
+ * 
+ * }
+ * 
+ * public Book(long isbn, String firstName, String lastName, String title) {
+ * if (("" + isbn).length() == 13) {
+ * this.isbn = "" + isbn;
+ * }
+ * if (("" + isbn).length() == 10) {
+ * this.isbn = "978" + isbn;
+ * }
+ * this.author = firstName + " " + lastName;
+ * this.title = title;
+ * }
+ */
+
+/*
+ * public void setIsbn(long isbn) {
+ * if (("" + isbn).length() == 13) {
+ * this.isbn = "" + isbn;
+ * }
+ * if (("" + isbn).length() == 10) {
+ * this.isbn = "978" + isbn;
+ * }
+ * }
+ */
