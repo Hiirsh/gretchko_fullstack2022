@@ -1,7 +1,5 @@
 package telran.book.model;
 
-import javax.xml.crypto.Data;
-
 public class Book {
     // isbn, title, author, yearOfPublishing
     private String isbn;
