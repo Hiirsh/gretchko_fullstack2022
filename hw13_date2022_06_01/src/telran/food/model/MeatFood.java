@@ -16,4 +16,9 @@ public class MeatFood extends Food {
         this.typeOfMeat = typeOfMilk;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "Type of meat: " + typeOfMeat;
+    }
+
 }

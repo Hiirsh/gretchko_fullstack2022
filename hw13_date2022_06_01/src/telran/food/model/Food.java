@@ -26,4 +26,9 @@ public class Food extends Product {
         this.expDate = expDate;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "expDate: " + expDate + ", kosher: " + kosher;
+    }
+
 }
