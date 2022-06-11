@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch UserAppl",
+      "request": "launch",
+      "mainClass": "telran.user.controller.UserAppl",
+      "projectName": "hw16_date2022_06_11_9b38ba84"
+    },
+    {
+      "type": "java",
+      "name": "Launch UserAppl",
+      "request": "launch",
+      "mainClass": "telran.controller.UserAppl",
+      "projectName": "hw16_date2022_06_11_9b38ba84"
+    },
+    {
+      "type": "java",
       "name": "Launch Current File",
       "request": "launch",
       "mainClass": "${file}"
@@ -15,16 +29,7 @@
       "name": "Launch App",
       "request": "launch",
       "mainClass": "App",
-      "projectName": "hw15_date2022_06_08_b9a6dc8d",
-      "args": ["wwww", "14", 100, 58.6, 9223372036854775807, "asdafded"]
-    },
-    {
-      "type": "java",
-      "name": "Launch Version2",
-      "request": "launch",
-      "mainClass": "Version2",
-      "projectName": "hw15_date2022_06_08_b9a6dc8d",
-      "args": [100, 58.6, 9223372036854775807, "eded"]
+      "projectName": "hw16_date2022_06_11_9b38ba84"
     }
   ]
 }
