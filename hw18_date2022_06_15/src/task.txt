@@ -1,0 +1,13 @@
+Download from dropbox file Photo.txt
+Full list of picture file Names for selection in format:
+folder\\YYYYMMDD_hhmmss.ext, where:
+folder - name of folder equal to location where picture was taken
+YYYY, MM, DD - year, month, day
+hh,mm,ss - hours, minutes, seconds
+Write the following tests:
+Test 1. All Europe pictures
+Test 2. All autumn pictures
+Test 3 All 2015 spring pictures
+Test 4. All night pictures (from 18:00 till 24:00)
+Test 5. All night pictures from Chicago
+Test 6. All jpg and png pictures
