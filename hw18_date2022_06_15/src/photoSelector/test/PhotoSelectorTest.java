@@ -1,6 +1,10 @@
+package photoSelector.test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Test;
+
+import photoSelector.model.PhotoSelector;
 
 public class PhotoSelectorTest {
     private static final String[] pictures = {
