@@ -13,7 +13,6 @@ import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.Assertions.*;
 
-import telran.employee.dao.Company;
 import telran.employee.dao.CompanyImpl;
 import telran.employee.model.Employee;
 import telran.employee.model.Manager;

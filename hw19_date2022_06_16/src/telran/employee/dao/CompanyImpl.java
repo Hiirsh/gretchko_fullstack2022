@@ -25,7 +25,7 @@ public class CompanyImpl implements Company {
         if (employee == null) {
             return false;
         }
-        for (int i = 0; i < employees.length; i++) {
+        for (int i = 0; i <= size(); i++) {
             if (employees[i] == null) {
                 setSize(i + 1);
                 break;
@@ -40,7 +40,7 @@ public class CompanyImpl implements Company {
 
     @Override
     public Employee removeEmployee(int id) {
-        for (int i = 0; i < employees.length; i++) {
+        for (int i = 0; i < size(); i++) {
             if (employees[i].getId() == id) {
                 int size = size();
                 Employee tempEmpl = employees[i];
