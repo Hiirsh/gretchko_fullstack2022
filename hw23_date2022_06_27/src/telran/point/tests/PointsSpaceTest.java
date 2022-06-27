@@ -2,8 +2,6 @@ package telran.point.tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Arrays;
-
 import org.junit.jupiter.api.Test;
 
 import telran.point.dao.PointsSpace;
