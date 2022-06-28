@@ -25,22 +25,13 @@ public class MatrixToolsTest {
   void testMultyply() {
     int [][] expected = {{14}};
     int [][] result = MatrixTools.multyply(m1, m2);
-    printArray(result);
     assertArrayEquals(expected, result);
     int [][] arr1 = {{1,2,3},{4,5,6}};
     int [][] arr2 = {{1,2},{3,4},{5,6}};
     int [][]arrExpected = {{22,28},{49,64}};
     assertArrayEquals(arrExpected, MatrixTools.multyply(arr1, arr2));
+    int [][] arr3 = {{1,4},{2,5},{3,6}};
+    int [][]arrExpected2 = {{14,32},{32,77}};
+    assertArrayEquals(arrExpected2, MatrixTools.multyply(arr1, arr3));
   }
-
-  private static void printArray(int[][] arr) {
-    for (int i = 0; i < arr.length; i++) {
-      for (int j = 0; j < arr[i].length; j++) {
-        System.out.print(arr[i][j]+"\t");
-      }
-      System.out.print("\n");
-    }
-  }
-
-
 }
