@@ -22,23 +22,19 @@ public class MatrixTools {
   }
 
   public static int[][] multyply(int[][] matr1, int[][] matr2) {
-    int n = matr1.length;
-    int n2 = matr2[0].length;
-    if (n != n2) {
+    int l = matr1.length;
+    if (l != matr2[0].length) {
       return null;
     }
-    int m = matr1[0].length;
-    int k = matr2.length;
 
-    int[][] res = new int[n][n];
-    for (int i = 0; i < n; i++) {
-      for (int j = 0; j < n; j++) {
+    int[][] res = new int[l][l];
+    for (int i = 0; i < l; i++) {
+      for (int j = 0; j < l; j++) {
         res[i][j] = getCellValue(matr1, matr2, i, j);
       }
     }
 
     return res;
-
   }
 
   private static int getCellValue(int[][] m1, int[][] m2, int m, int k) {
