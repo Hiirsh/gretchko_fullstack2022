@@ -1,5 +1,8 @@
 package telran.album.model;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Arrays;
 
 public class AlbumImpl implements Album {
@@ -40,7 +43,7 @@ public class AlbumImpl implements Album {
     size--;
     Photo[] temp = new Photo[size];
     System.arraycopy(this.photos, 0, temp, 0, i);
-    System.arraycopy(this.photos, i+1, temp, i, size - i);
+    System.arraycopy(this.photos, i + 1, temp, i, size - i);
     this.photos = temp;
     return true;
   }
@@ -94,6 +97,43 @@ public class AlbumImpl implements Album {
   }
 
   @Override
+  public Photo[] getPhotoBetweenDate(LocalDate dateFrom, LocalDate dateTo) {
+    // int beginIndex = Arrays.binarySearch(photos, dateFrom);
+    // int endIndex = Arrays.binarySearch(photos, dateTo);
+    // beginIndex = beginIndex >= 0 ? beginIndex : -beginIndex - 1;
+    // endIndex = endIndex >= 0 ? endIndex : -endIndex - 1;
+    // for (int i = beginIndex; i >= 0; i--) {
+    // if (photos[i].getDate().isBefore(photos[beginIndex].getDate())) {
+    // beginIndex = i;
+    // break;
+    // }
+    // }
+    // for (int i = endIndex; i < photos.length; i++) {
+    // if (photos[i].getDate().isAfter(photos[beginIndex].getDate())) {
+    // endIndex = i;
+    // break;
+    // }
+    // }
+    LocalDateTime dateFromTemp = LocalDateTime.of(dateFrom, LocalTime.of(0, 0));
+    LocalDateTime dateToTemp = LocalDateTime.of(dateTo, LocalTime.of(23, 59));
+    int beginIndex = 0;
+    int endIndex = size;
+    for (int i = 0; i < endIndex; i++) {
+      if (photos[i].getDate().isAfter(dateFromTemp)) {
+        beginIndex = i;
+      }
+    }
+    for (int i = size - 1; i > beginIndex; i--) {
+      if (photos[i].getDate().isBefore(dateToTemp)) {
+        endIndex = i;
+      }
+    }
+    Photo[] res = new Photo[endIndex - beginIndex];
+    System.arraycopy(photos, beginIndex, res, 0, endIndex - beginIndex);
+    return res;
+  }
+
+  @Override
   public int size() {
     return this.size;
   }
@@ -109,4 +149,5 @@ public class AlbumImpl implements Album {
     }
     return -1;
   }
+
 }

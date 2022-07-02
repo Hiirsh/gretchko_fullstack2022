@@ -1,9 +1,11 @@
 package telran.album.test;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -24,14 +26,13 @@ public class AlbumImplTest {
   Photo photo2 = new Photo(0, 1, "title2", "url2", time2);
   Photo photo3 = new Photo(0, 2, "title3", "url3", time3);
   Photo photo3_1 = new Photo(0, 2, "title3", "url3_1", time3);
-  Photo photo4 = new Photo(1, 3, "title4", "url4", time4);
+  Photo photo4 = new Photo(1, 344323, "title4", "url4", time4);
 
   @BeforeEach
   void setUp() {
     alb.addPhoto(photo3);
     alb.addPhoto(photo2);
     alb.addPhoto(photo1);
-    alb.addPhoto(photo4);
   }
 
   @Test
@@ -69,7 +70,20 @@ public class AlbumImplTest {
 
   @Test
   void testSize() {
-    assertEquals(alb.size(), 3);
+    assertEquals(alb.size(), 4);
+  }
+
+  @Test
+  void testGetPhotoBetweenDate() {
+    alb.addPhoto(photo3);
+    alb.addPhoto(photo2);
+    alb.addPhoto(photo1);
+    System.out.println(alb.addPhoto(photo4));
+    for (int i = 0; i <3; i++) {
+      System.out.println(alb.getPhotoFromAlbum(i, 1));
+    }
+    Photo[]expected = {photo1,photo4};
+    assertArrayEquals(expected, alb.getPhotoBetweenDate(LocalDate.of(2016, 1, 1), LocalDate.of(2018, 1, 1)));
   }
 
 }

@@ -1,5 +1,7 @@
 package telran.album.model;
 
+import java.time.LocalDate;
+
 public interface Album {
   boolean addPhoto(Photo photo);
 
@@ -10,6 +12,8 @@ public interface Album {
   Photo getPhotoFromAlbum(int photoId, int albumId);
 
   Photo[] getAllPhotoFromAlbum(int albumId);
-
+  
+  Photo[] getPhotoBetweenDate(LocalDate dateFrom, LocalDate dateTo);
+  
   int size();
 }
