@@ -88,12 +88,6 @@ public class Photo implements Comparable<Photo> {
 
   @Override
   public int compareTo(Photo other) {
-    if (this.date.isBefore(other.getDate())) {
-      return -1;
-    }
-    if (this.date.isAfter(other.getDate())) {
-      return 1;
-    }
-    return 0;
+    return this.date.compareTo(other.getDate());
   }
 }

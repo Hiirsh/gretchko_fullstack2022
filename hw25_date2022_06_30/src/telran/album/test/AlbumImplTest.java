@@ -24,22 +24,20 @@ public class AlbumImplTest {
   Photo photo2 = new Photo(0, 1, "title2", "url2", time2);
   Photo photo3 = new Photo(0, 2, "title3", "url3", time3);
   Photo photo3_1 = new Photo(0, 2, "title3", "url3_1", time3);
-  Photo photo4 = new Photo(0, 3, "title4", "url4", time4);
+  Photo photo4 = new Photo(1, 3, "title4", "url4", time4);
 
   @BeforeEach
   void setUp() {
     alb.addPhoto(photo3);
     alb.addPhoto(photo2);
     alb.addPhoto(photo1);
+    alb.addPhoto(photo4);
   }
 
   @Test
   void testAddPhoto() {
-    alb.addPhoto(photo3);
-    alb.addPhoto(photo2);
-    alb.addPhoto(photo1);
     assertFalse(alb.addPhoto(photo3));
-    assertTrue(alb.addPhoto(photo4));
+    assertFalse(alb.addPhoto(photo4));
     assertEquals(alb.size(), 4);
   }
 
@@ -50,12 +48,9 @@ public class AlbumImplTest {
   }
 
   @Test
-
-  void testGetAllPhotoFromAlbum() {
-    Photo[] fromAlb = alb.getAllPhotoFromAlbum(0);
-    for (int i = 0; i < fromAlb.length; i++) {
-      System.out.println(fromAlb[i]);
-    }
+  void testUpdatePhoto() {
+    alb.updatePhoto(2, 0, "url3_1");
+    assertEquals(alb.getPhotoFromAlbum(2, 0), photo3_1);
   }
 
   @Test
@@ -64,13 +59,17 @@ public class AlbumImplTest {
   }
 
   @Test
+  void testGetAllPhotoFromAlbum() {
+    Photo[] fromAlb = alb.getAllPhotoFromAlbum(0);
+    for (int i = 0; i < fromAlb.length; i++) {
+      System.out.println(fromAlb[i]);
+    }
+    assertEquals(fromAlb.length, 3);
+  }
+
+  @Test
   void testSize() {
     assertEquals(alb.size(), 3);
   }
 
-  @Test
-  void testUpdatePhoto() {
-    alb.updatePhoto (2, 0, "url3_1");
-    assertEquals(alb.getPhotoFromAlbum(2, 0)  ,photo3_1);
-  }
 }
