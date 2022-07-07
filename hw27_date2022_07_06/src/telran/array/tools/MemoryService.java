@@ -12,10 +12,10 @@ public class MemoryService {
 			try {
 				Integer[] arr = new Integer[middle];
 				left = middle;
-				System.out.println(i + "\t" + middle + "\ttrue" + "\tleft" + left + "\tright" + right);
+				System.out.println(i + "\t" + middle + "\ttrue" + "\tleft\t" + left + "\tright\t" + right);
 			} catch (OutOfMemoryError e) {
 				right = middle;
-				System.out.println(i + "\t" + middle + "\tfalse" + "\tleft" + left + "\tright" + right);
+				System.out.println(i + "\t" + middle + "\tfalse" + "\tleft\t" + left + "\tright\t" + right);
 			}
 			i++;
 		}
