@@ -21,8 +21,9 @@ public class Fibonacci implements Iterable<Integer> {
 	@Override
 	public Iterator<Integer> iterator() {
 		return new Iterator<Integer>() {
-			private	int[] arr = new int[quantity];
+			// private int[] arr = new int[quantity];
 			private int currPos;
+			private int a, a1 = 1, a2 = 1;
 
 			@Override
 			public boolean hasNext() {
@@ -31,12 +32,18 @@ public class Fibonacci implements Iterable<Integer> {
 
 			@Override
 			public Integer next() {
+
 				if (currPos == 0 || currPos == 1) {
-					arr[currPos++] = 1;
+					currPos++;
+					a1 = 1;
+					a = 1;
 					return 1;
 				}
-				arr[currPos] = arr[currPos - 1] + arr[currPos - 2];
-				return arr[currPos++];
+				a = a1 + a2;
+				a2 = a1;
+				a1 = a;
+				currPos++;
+				return a;
 			}
 		};
 	}
