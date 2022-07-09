@@ -23,7 +23,7 @@ public class FibonacciAppl {
 			if (1 + counter++ < fibonacci.getQuantity()) {
 				System.out.print(",");
 			} else {
-				System.out.print("=" + sum + "\t");
+				System.out.print("=" + sum + "\n");
 			}
 		}
 
