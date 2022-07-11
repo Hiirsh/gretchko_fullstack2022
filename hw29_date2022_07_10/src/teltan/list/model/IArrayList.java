@@ -10,6 +10,7 @@ public class IArrayList<E> implements IList<E> {
     private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
     private Object[] elements;
     private int size;
+
     // O(1)
     public IArrayList() {
         elements = new Object[10];
@@ -69,8 +70,12 @@ public class IArrayList<E> implements IList<E> {
     @Override
     public boolean add(int index, E element) {
         ensureCapacity();
+        if (index == size) {
+            add(element);
+            return true;
+        }
         checkIndex(index);
-        System.arraycopy(elements, index, elements, index + 1, size - index );
+        System.arraycopy(elements, index, elements, index + 1, size - index);
         elements[index] = element;
         size++;
         return true;
