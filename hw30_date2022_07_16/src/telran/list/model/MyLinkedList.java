@@ -104,7 +104,7 @@ public class MyLinkedList<E> implements IList<E> {
 			return node;
 		} else {
 			Node<E> node = last;
-			for (int i = size - 1; i >= index; i--) {
+			for (int i = size - 1; i > index; i--) {
 				node = node.prev;
 			}
 			return node;
