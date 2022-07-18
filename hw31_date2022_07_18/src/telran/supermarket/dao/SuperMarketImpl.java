@@ -108,10 +108,10 @@ public class SuperMarketImpl implements SuperMarket {
 
           @Override
           public Product next() {
-            return checkCategoty();
+            return checkProduct();
           }
 
-          private Product checkCategoty() {
+          private Product checkProduct() {
             
             Product temp = (Product) arr[i];
             switch (searchType) {
@@ -127,7 +127,7 @@ public class SuperMarketImpl implements SuperMarket {
             }
             if (!compare) {
               i++;
-              checkCategoty();
+              checkProduct();
             }
             return (Product) arr[i++];
           }

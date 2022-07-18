@@ -15,7 +15,7 @@ public class SuperMarketAllp {
       prod[i] = new Product(i, "name" + i, "category" + i, "brand" + i, 10. + i, LocalDate.now().plusDays(i + 1));
     }
     for (int i = 3; i < 8; i++) {
-      prod[i] = new Product(i, "name" + i, "category" + i, "brand" + i, 10. + i, LocalDate.now().minusDays(i + 1));
+      prod[i] = new Product(i, "name" + i, "category" + i, "brand" + i, 10. + i, LocalDate.now().minusDays(i));
     }
     int i = 8;
     prod[i] = new Product(i, "name" + i, "category" + 0, "brand" + i, 10. + i, LocalDate.now().plusDays(i + 1));
