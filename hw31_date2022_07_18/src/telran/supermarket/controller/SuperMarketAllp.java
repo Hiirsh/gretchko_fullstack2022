@@ -26,12 +26,9 @@ public class SuperMarketAllp {
     }
 
     Iterator<Product> iterator = sm.iterator();
-    // while(iterator.hasNext()){
-    //   System.out.println(iterator.next());
-    // }
-    iterator = sm.findProductWithExpDate().iterator();
     while(iterator.hasNext()){
       System.out.println(iterator.next());
     }
+    sm.findProductWithExpDate().forEach(p->System.out.println(p));
   }
 }
