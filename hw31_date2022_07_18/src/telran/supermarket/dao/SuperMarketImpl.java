@@ -49,12 +49,12 @@ public class SuperMarketImpl implements SuperMarket {
 
   @Override
   public Product removeProduct(long barCode) {
-    return findRemoveIterator(barCode, false);
+    return findOrRemoveFunc(barCode, false);
   }
 
   @Override
   public Product findByBarCode(long barCode) {
-    return findRemoveIterator(barCode, true);
+    return findOrRemoveFunc(barCode, true);
   }
 
   @Override
@@ -77,7 +77,7 @@ public class SuperMarketImpl implements SuperMarket {
     return skuQuantity;
   }
 
-  private Product findRemoveIterator(long barCode, boolean isRemove) {
+  private Product findOrRemoveFunc(long barCode, boolean isRemove) {
     while (iterator().hasNext()) {
       if (iterator().next().getBarCode() == barCode) {
         Product res = iterator().next();
