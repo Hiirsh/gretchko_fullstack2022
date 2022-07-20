@@ -12,7 +12,7 @@ public class LastNameComparator implements Comparator<Person> {
         if (res != 0) {
             return res;
         }
-        res = p1.getLastName().compareTo(p2.getLastName());
+        res = p1.getFirstName().compareTo(p2.getFirstName());
         if (res != 0) {
             return res;
         }

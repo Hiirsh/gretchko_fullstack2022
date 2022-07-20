@@ -115,6 +115,9 @@ public class CitizensImplTest {
 
     @Test
     void testRemove() {
+        for (Person person : citizens.getAllPersonSortedByAge()) {
+            System.out.println(person);
+        }
         assertTrue(citizens.remove(0));
         assertEquals(4, citizens.size());
     }

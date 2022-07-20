@@ -15,29 +15,22 @@ public class CitizensImpl implements Citizens {
     private List<Person> idList;
     private List<Person> lastNameList;
     private List<Person> ageList;
-    private static Comparator<Person> lastNameComparator;
-    private static Comparator<Person> ageComparator;
+    private static Comparator<Person> lastNameComparator = new LastNameComparator();
+    private static Comparator<Person> ageComparator = new AgeComparator();
 
     public CitizensImpl() {
         idList = new ArrayList<>();
         lastNameList = new ArrayList<>();
         ageList = new ArrayList<>();
-        lastNameComparator = new LastNameComparator();
-        ageComparator = new AgeComparator();
     }
 
     public CitizensImpl(List<Person> citizens) {
         idList = new ArrayList<>();
         lastNameList = new ArrayList<>();
         ageList = new ArrayList<>();
-        lastNameComparator = new LastNameComparator();
-        ageComparator = new AgeComparator();
-        Collections.addAll(idList, citizens.toArray(new Person[0]));
-        Collections.addAll(lastNameList, citizens.toArray(new Person[0]));
-        Collections.addAll(ageList, citizens.toArray(new Person[0]));
-        Collections.sort(idList);
-        Collections.sort(lastNameList, lastNameComparator);
-        Collections.sort(ageList, ageComparator);
+        for (Person person : citizens) {
+                add(person);
+        }
     }
 
     @Override
@@ -119,7 +112,7 @@ public class CitizensImpl implements Citizens {
     @Override
     public Iterable<Person> find(String lastName) {
         ArrayList<Person> res = new ArrayList<>();
-        Person pattern = new Person(0, null, lastName, 0);
+        Person pattern = new Person(0, "", lastName, 0);
         int minIndex = Collections.binarySearch(lastNameList, pattern, lastNameComparator);
         minIndex = minIndex < 0 ? -minIndex - 1 : minIndex;
         int maxIndex = minIndex;
